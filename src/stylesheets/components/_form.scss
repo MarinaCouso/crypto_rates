@@ -2,6 +2,13 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  @media all and (min-width: 768px) {
+    height: 30vh;
+    padding: 7rem 0rem 23rem 0rem;
+  }
+  @media all and (min-width: 1000px) {
+    padding: 7rem 0rem 23rem 0rem;
+  }
   &__quantity {
     display: flex;
     flex-direction: column;
@@ -14,6 +21,10 @@
       text-align: center;
       width: 100%;
       margin-bottom: 1.5rem;
+      @media all and (min-width: 1000px) {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+      }
     }
     &__input {
       width: 30%;
@@ -28,15 +39,28 @@
       &:focus {
         border: none;
       }
+      @media all and (min-width: 1000px) {
+        font-size: 1.5rem;
+        margin-bottom: 3.5rem;
+      }
     }
   }
   &__coin {
     margin-left: 3rem;
+    @media all and (min-width: 1000px) {
+      height: 30vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
     &__label {
       color: #335eea;
       font-weight: 700;
       font-size: 1.2rem;
       padding-top: 1.5rem;
+      @media all and (min-width: 1000px) {
+        font-size: 2rem;
+      }
     }
     &__box {
       display: flex;
