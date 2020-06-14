@@ -6,10 +6,10 @@ function Footer() {
   return (
     <footer>
       <div className='footer__text'>
-        <img src={Logo} />
+        <img src={Logo} alt='Monedero' title="Monedero's logo" />
         <p>Recibe, envía e intercambia tus criptomonedas de la manera más sencilla. Sin líos ni comisiones. </p>
         <a href='https://twitter.com/monederodotcom'>
-          <img src={Twitter} />
+          <img src={Twitter} alt='Twitter' />
         </a>
       </div>
       <nav className='footer__nav'>

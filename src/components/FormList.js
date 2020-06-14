@@ -11,31 +11,31 @@ function FormList() {
   return (
     <ul>
       <li>
-        <img src={Bitcoins} />
+        <img src={Bitcoins} alt='Bitcoins' title='Bitcocoins' />
         Bitcoin
       </li>
       <li>
-        <img src={Tether} />
+        <img src={Tether} alt='Tether' title='Tether' />
         Tether
       </li>
       <li>
-        <img src={Ethereum} />
+        <img src={Ethereum} alt='Ethereum' title='Ethereum' />
         Ethereum
       </li>
       <li>
-        <img src={USDCoin} />
+        <img src={USDCoin} alt='USDCoin' title='USDCoin' />
         USD Coin
       </li>
       <li>
-        <img src={Litecoin} />
+        <img src={Litecoin} alt='Litecoin' title='Litecoin' />
         Litecoin
       </li>
       <li>
-        <img src={TrueUSD} />
+        <img src={TrueUSD} alt='TrueUSD' title='TrueUSD' />
         TrueUSD
       </li>
       <li>
-        <img src={Bcash} />
+        <img src={Bcash} alt='logo' />
         Bcash
       </li>
     </ul>

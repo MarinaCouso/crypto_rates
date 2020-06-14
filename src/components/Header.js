@@ -6,7 +6,7 @@ function Header() {
     <header className='header'>
       <nav className='header__nav'>
         <div className='header__nav__logo'>
-          <img src={Logo} alt="Monedero's logo" title="Monedero's logo" />
+          <img src={Logo} alt='Monedero' title="Monedero's logo" />
         </div>
         <ul className='header__nav__menu'>
           <li>
