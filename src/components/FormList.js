@@ -11,7 +11,7 @@ function FormList() {
   return (
     <ul className='section__form__list'>
       <li className='section__form__list__option'>
-        <img className='section__form__list__icon' className='section__form__list__icon' src={Bitcoins} alt='Bitcoins' title='Bitcocoins' />
+        <img className='section__form__list__icon' src={Bitcoins} alt='Bitcoins' title='Bitcocoins' />
         Bitcoin
       </li>
       <li className='section__form__list__option closed-list'>
