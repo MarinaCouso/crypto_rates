@@ -10,24 +10,16 @@ function Header() {
         </div>
         <ul className='header__nav__menu'>
           <li>
-            <a href='https://www.monedero.com/seguridad' target='_blank'>
-              Seguridad
-            </a>
+            <a href='https://www.monedero.com/seguridad'>Seguridad</a>
           </li>
           <li>
-            <a href='https://www.monedero.com/sobre-nosotros' target='_blank'>
-              Sobre nosotros
-            </a>
+            <a href='https://www.monedero.com/sobre-nosotros'>Sobre nosotros</a>
           </li>
           <li>
-            <a href='https://www.monedero.com/faq' target='_blank'>
-              FAQ
-            </a>
+            <a href='https://www.monedero.com/faq'>FAQ</a>
           </li>
           <li>
-            <a href='https://blog.monedero.com/' target='_blank'>
-              Blog
-            </a>
+            <a href='https://blog.monedero.com/'>Blog</a>
           </li>
         </ul>
       </nav>
