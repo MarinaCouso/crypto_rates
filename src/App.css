@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.bitcoin {
+  background-image: url(./images/btc.svg);
+}
