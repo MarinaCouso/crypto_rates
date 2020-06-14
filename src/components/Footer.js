@@ -4,33 +4,53 @@ import Twitter from '../images/twitter.svg';
 
 function Footer() {
   return (
-    <footer>
+    <footer className='footer'>
       <div className='footer__text'>
-        <img src={Logo} alt='Monedero' title="Monedero's logo" />
-        <p>Recibe, envía e intercambia tus criptomonedas de la manera más sencilla. Sin líos ni comisiones. </p>
+        <img className='footer__text__logo' src={Logo} alt='Monedero' title="Monedero's logo" />
+        <p className='footer__text__p'>Recibe, envía e intercambia tus criptomonedas de la manera más sencilla. Sin líos ni comisiones. </p>
         <a href='https://twitter.com/monederodotcom'>
-          <img src={Twitter} alt='Twitter' />
+          <img className='footer__text__twitter' src={Twitter} alt='Twitter' />
         </a>
       </div>
       <nav className='footer__nav'>
-        <div className='footer__nav__1'>
-          <h6>Navegación</h6>
-          <ul>
-            <li>Seguridad</li>
-            <li>Sobre nosotros</li>
-            <li>FAQ</li>
+        <div className='footer__nav__box'>
+          <h6 className='footer__nav__title'>Navegación</h6>
+          <ul className='footer__nav__list'>
+            <li>
+              <a className='footer__nav__links' href='https://www.monedero.com/seguridad'>
+                Seguridad
+              </a>
+            </li>
+            <li>
+              <a className='footer__nav__links' href='https://www.monedero.com/sobre-nosotros'>
+                Sobre nosotros
+              </a>
+            </li>
+            <li>
+              <a className='footer__nav__links' href='https://www.monedero.com/faq'>
+                FAQ
+              </a>
+            </li>
           </ul>
         </div>
-        <div className='footer__nav__2'>
-          <h6>Legal</h6>
-          <ul>
-            <li>Términos y condiciones</li>
+        <div className='footer__nav__box'>
+          <h6 className='footer__nav__title'>Legal</h6>
+          <ul className='footer__nav__list'>
+            <li>
+              <a className='footer__nav__links' href='https://www.monedero.com/terms'>
+                Términos y condiciones
+              </a>
+            </li>
           </ul>
         </div>
-        <div className='footer__nav__3'>
-          <h6>Contacto</h6>
-          <ul>
-            <li>Soporte</li>
+        <div className='footer__nav__box'>
+          <h6 className='footer__nav__title'>Contacto</h6>
+          <ul className='footer__nav__list'>
+            <li>
+              <a className='footer__nav__links' href='https://support.monedero.com/'>
+                Soporte
+              </a>
+            </li>
           </ul>
         </div>
       </nav>

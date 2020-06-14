@@ -1,0 +1,50 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f4f8;
+  &__text {
+    margin: 2rem;
+    &__logo {
+      display: block;
+      width: 13rem;
+      margin-bottom: 1rem;
+      @media all and (min-width: 1000px) {
+        margin: 2rem;
+      }
+    }
+    &__p {
+      display: block;
+      color: #869ab8;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    &__twitter {
+      width: 2.5rem;
+    }
+  }
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0rem 2rem 2rem 2rem;
+    &__box {
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+    &__title {
+      display: block;
+      color: #506690;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+    &__links {
+      text-decoration: none;
+      color: #869ab8;
+    }
+    &__list {
+      list-style: none;
+    }
+  }
+}
