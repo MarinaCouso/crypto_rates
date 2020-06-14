@@ -14,27 +14,27 @@ function FormList() {
         <img className='section__form__list__icon' className='section__form__list__icon' src={Bitcoins} alt='Bitcoins' title='Bitcocoins' />
         Bitcoin
       </li>
-      <li className='section__form__list__option closed'>
+      <li className='section__form__list__option closed-list'>
         <img className='section__form__list__icon' src={Tether} alt='Tether' title='Tether' />
         Tether
       </li>
-      <li className='section__form__list__option closed'>
+      <li className='section__form__list__option closed-list'>
         <img className='section__form__list__icon' src={Ethereum} alt='Ethereum' title='Ethereum' />
         Ethereum
       </li>
-      <li className='section__form__list__option closed'>
+      <li className='section__form__list__option closed-list'>
         <img className='section__form__list__icon' src={USDCoin} alt='USDCoin' title='USDCoin' />
         USD Coin
       </li>
-      <li className='section__form__list__option closed'>
+      <li className='section__form__list__option closed-list'>
         <img className='section__form__list__icon' src={Litecoin} alt='Litecoin' title='Litecoin' />
         Litecoin
       </li>
-      <li className='section__form__list__option closed'>
+      <li className='section__form__list__option closed-list'>
         <img className='section__form__list__icon' src={TrueUSD} alt='TrueUSD' title='TrueUSD' />
         TrueUSD
       </li>
-      <li className='section__form__list__option closed'>
+      <li className='section__form__list__option closed-list'>
         <img className='section__form__list__icon' src={Bcash} alt='logo' />
         Bcash
       </li>
