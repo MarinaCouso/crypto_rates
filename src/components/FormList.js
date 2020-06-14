@@ -9,33 +9,33 @@ import Bcash from '../images/bch.svg';
 
 function FormList() {
   return (
-    <ul>
-      <li>
-        <img src={Bitcoins} alt='Bitcoins' title='Bitcocoins' />
+    <ul className='section__form__list'>
+      <li className='section__form__list__option'>
+        <img className='section__form__list__icon' className='section__form__list__icon' src={Bitcoins} alt='Bitcoins' title='Bitcocoins' />
         Bitcoin
       </li>
-      <li>
-        <img src={Tether} alt='Tether' title='Tether' />
+      <li className='section__form__list__option closed'>
+        <img className='section__form__list__icon' src={Tether} alt='Tether' title='Tether' />
         Tether
       </li>
-      <li>
-        <img src={Ethereum} alt='Ethereum' title='Ethereum' />
+      <li className='section__form__list__option closed'>
+        <img className='section__form__list__icon' src={Ethereum} alt='Ethereum' title='Ethereum' />
         Ethereum
       </li>
-      <li>
-        <img src={USDCoin} alt='USDCoin' title='USDCoin' />
+      <li className='section__form__list__option closed'>
+        <img className='section__form__list__icon' src={USDCoin} alt='USDCoin' title='USDCoin' />
         USD Coin
       </li>
-      <li>
-        <img src={Litecoin} alt='Litecoin' title='Litecoin' />
+      <li className='section__form__list__option closed'>
+        <img className='section__form__list__icon' src={Litecoin} alt='Litecoin' title='Litecoin' />
         Litecoin
       </li>
-      <li>
-        <img src={TrueUSD} alt='TrueUSD' title='TrueUSD' />
+      <li className='section__form__list__option closed'>
+        <img className='section__form__list__icon' src={TrueUSD} alt='TrueUSD' title='TrueUSD' />
         TrueUSD
       </li>
-      <li>
-        <img src={Bcash} alt='logo' />
+      <li className='section__form__list__option closed'>
+        <img className='section__form__list__icon' src={Bcash} alt='logo' />
         Bcash
       </li>
     </ul>
