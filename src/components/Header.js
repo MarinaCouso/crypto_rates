@@ -1,28 +1,23 @@
 import React from 'react';
 import Logo from '../images/logo.svg';
 import MenuClosed from '../images/menu-icon.png';
+import HeaderMenu from './HeaderMenu';
 
-function Header() {
+function Header(props) {
+  function handleClick(ev) {
+    props.handleMenu(ev);
+  }
   return (
     <header className='header'>
       <nav className='header__nav'>
         <img className='header__nav__logo' src={Logo} alt='Monedero' title="Monedero's logo" />
-        <img className='header__nav__menu-closed' src={MenuClosed} alt='Menú' title='Menú' />
-        <ul className='header__nav__menu-open hidden'>
-          <li>
-            <a href='https://www.monedero.com/seguridad'>Seguridad</a>
-          </li>
-          <li>
-            <a href='https://www.monedero.com/sobre-nosotros'>Sobre nosotros</a>
-          </li>
-          <li>
-            <a href='https://www.monedero.com/faq'>FAQ</a>
-          </li>
-          <li>
-            <a href='https://blog.monedero.com/'>Blog</a>
-          </li>
-        </ul>
+        <div className='header__nav__menu'>
+          <img className='header__nav__menu__hamburguer closed' src={MenuClosed} alt='Menú' title='Menú' onClick={handleClick} />
+        </div>
       </nav>
+      <div className='js-menu hidden'>
+        <HeaderMenu />
+      </div>
       <div className='header__hero'>
         <div className='header__hero__text'>
           <h1 className='header__hero__text__title'>Compara precios rápido y fácil</h1>

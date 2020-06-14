@@ -9,16 +9,72 @@
       display: block;
       width: 13rem;
       margin: 1rem;
+      @media all and (min-width: 1000px) {
+        margin: 2rem;
+      }
     }
-    &__menu-closed {
-      display: block;
-      height: 2rem;
-      margin: 0.7rem 1rem;
+    &__menu {
+      display: flex;
+      flex-direction: column;
+
+      &__hamburguer {
+        display: block;
+        height: 2rem;
+        margin: 0.7rem 1rem;
+        @media all and (min-width: 1000px) {
+          display: none;
+          z-index: 1;
+        }
+      }
+      &__open {
+        margin: 1rem 0.5rem;
+        text-align: right;
+        position: absolute;
+        right: 0;
+        list-style: none;
+        border: 0.05rem solid #869ab8;
+        @media all and (min-width: 1000px) {
+          visibility: visible;
+          border: none;
+          display: flex;
+          flex-direction: row;
+          z-index: 2;
+          top: 0.2rem;
+        }
+      }
+    }
+    &__items {
+      height: 3rem;
+      width: 13rem;
+      padding: 1rem;
+      border-bottom: 0.05rem solid #869ab8;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f9fbfd;
+      @media all and (min-width: 1000px) {
+        border-bottom: none;
+        width: 10rem;
+      }
+    }
+    &__links {
+      text-decoration: none;
+      color: #869ab8;
+      font-weight: 400;
+      &:hover {
+        color: #335eea;
+      }
     }
   }
   &__hero {
     height: 100vh;
     margin-top: 5rem;
+    @media all and (min-width: 1000px) {
+      margin: 4rem 5rem;
+
+      height: 30vh;
+    }
     &__text {
       &__title {
         display: block;
@@ -26,16 +82,23 @@
         color: #335eea;
         font-weight: 700;
         font-size: 2.2rem;
+        @media all and (min-width: 1000px) {
+          font-size: 3rem;
+        }
       }
       &__p {
         display: block;
         margin: 0.5rem 0.5rem;
         color: #869ab8;
         font-weight: 700;
+        @media all and (min-width: 1000px) {
+          font-size: 1.5rem;
+          font-weight: 400;
+        }
       }
     }
   }
 }
 .hidden {
-  display: none;
+  visibility: hidden;
 }
