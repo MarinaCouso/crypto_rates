@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   background-color: #f1f4f8;
+  @media all and (min-width: 1000px) {
+    flex-direction: row;
+  }
   &__text {
     margin: 2rem;
     &__logo {
@@ -17,9 +20,18 @@
       color: #869ab8;
       font-weight: 700;
       margin-bottom: 1rem;
+      @media all and (min-width: 1000px) {
+        width: 40rem;
+        font-size: 1.5rem;
+        padding: 0rem 2.5rem;
+      }
     }
     &__twitter {
       width: 2.5rem;
+      @media all and (min-width: 1000px) {
+        width: 3.5rem;
+        margin: 0rem 2.5rem;
+      }
     }
   }
   &__nav {
@@ -27,9 +39,18 @@
     flex-direction: column;
     justify-content: center;
     margin: 0rem 2rem 2rem 2rem;
+    @media all and (min-width: 1200px) {
+      flex-direction: row;
+      margin-top: 2.5rem;
+      width: 100%;
+      justify-content: space-around;
+    }
     &__box {
       text-align: left;
       margin-bottom: 1rem;
+      @media all and (min-width: 1000px) {
+        margin-right: 4rem;
+      }
     }
     &__title {
       display: block;
@@ -38,10 +59,16 @@
       margin-bottom: 0.5rem;
       text-transform: uppercase;
       font-size: 0.8rem;
+      @media all and (min-width: 1000px) {
+        font-size: 1.5rem;
+      }
     }
     &__links {
       text-decoration: none;
       color: #869ab8;
+      @media all and (min-width: 1000px) {
+        font-size: 1.5rem;
+      }
     }
     &__list {
       list-style: none;
