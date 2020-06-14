@@ -4,7 +4,7 @@ import FormList from './FormList';
 function Form() {
   return (
     <section>
-      <form class='section__form'>
+      <form className='section__form'>
         <label>¿Qué cantidad quieres calcular?</label>
         <input type='number'></input>
         <label>De</label>

@@ -4,11 +4,11 @@ import Logo from '../images/logo.svg';
 function Header() {
   return (
     <header>
-      <nav class='header__nav'>
-        <div class='header__nav__logo'>
+      <nav className='header__nav'>
+        <div className='header__nav__logo'>
           <img src={Logo} alt="Monerdero's logo" title="Monerdero's logo" />
         </div>
-        <ul class='header__nav__menu'>
+        <ul className='header__nav__menu'>
           <li>
             <a href='https://www.monedero.com/seguridad' target='_blank'>
               Seguridad
@@ -31,8 +31,8 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <div class='header__hero'>
-        <div class='header__hero__text'>
+      <div className='header__hero'>
+        <div className='header__hero__text'>
           <h1>Compara precios rápido y fácil</h1>
           <p>Elige las monedas que quieres comparar y la cantidad que quieres calcular.</p>
           <p>Así de sencillo.</p>
