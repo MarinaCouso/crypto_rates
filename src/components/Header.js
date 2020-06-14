@@ -3,10 +3,10 @@ import Logo from '../images/logo.svg';
 
 function Header() {
   return (
-    <header>
+    <header className='header'>
       <nav className='header__nav'>
         <div className='header__nav__logo'>
-          <img src={Logo} alt="Monerdero's logo" title="Monerdero's logo" />
+          <img src={Logo} alt="Monedero's logo" title="Monedero's logo" />
         </div>
         <ul className='header__nav__menu'>
           <li>
