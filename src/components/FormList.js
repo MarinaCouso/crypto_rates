@@ -11,13 +11,13 @@ import Bcash from '../images/bch.svg';
 function FormList(props) {
   return (
     <ul className='section__form__list' id={props.id}>
-      <FormListItem src={Bitcoins} name='Bitcoins' handleList={props.handleList} />
-      <FormListItem src={Tether} name='Tether' handleList={props.handleList} />
-      <FormListItem src={Ethereum} name='Ethereum' handleList={props.handleList} />
-      <FormListItem src={USDCoin} name='USDCoin' handleList={props.handleList} />
-      <FormListItem src={Litecoin} name='Litecoin' handleList={props.handleList} />
-      <FormListItem src={TrueUSD} name='TrueUSD' handleList={props.handleList} />
-      <FormListItem src={Bcash} name='Bcash' handleList={props.handleList} />
+      <FormListItem id='BTC' src={Bitcoins} name='Bitcoins' handleList={props.handleList} />
+      <FormListItem id='USDT' src={Tether} name='Tether' handleList={props.handleList} />
+      <FormListItem id='ETH' src={Ethereum} name='Ethereum' handleList={props.handleList} />
+      <FormListItem id='USDC' src={USDCoin} name='USDCoin' handleList={props.handleList} />
+      <FormListItem id='LTC' src={Litecoin} name='Litecoin' handleList={props.handleList} />
+      <FormListItem id='TUSD' src={TrueUSD} name='TrueUSD' handleList={props.handleList} />
+      <FormListItem id='BCH' src={Bcash} name='Bcash' handleList={props.handleList} />
     </ul>
   );
 }
