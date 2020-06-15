@@ -17,7 +17,7 @@ function App() {
     }
   }
   function handleList(ev) {
-    console.log(ev.currentTarget);
+    console.log(ev.currentTarget.id);
   }
   return (
     <>
