@@ -2,7 +2,8 @@ import React from 'react';
 import Header from './components/Header';
 import Form from './components/Form';
 import Footer from './components/Footer';
-
+import { useEffect } from 'react';
+import getDataFromApi from './service/Api';
 function App() {
   function handleMenu(ev) {
     const deployMenu = document.querySelector('.js-menu');
@@ -16,6 +17,11 @@ function App() {
       ev.currentTarget.classList.add('closed');
     }
   }
+  useEffect(() => {
+    getDataFromApi().then((data) => {
+      console.log(data);
+    });
+  }, []);
   return (
     <>
       <Header handleMenu={handleMenu} />
