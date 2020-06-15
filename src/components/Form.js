@@ -25,12 +25,12 @@ function Form(props) {
         <div className='section__form__coin'>
           <div className='section__form__coin__box'>
             <label className='section__form__coin__label'>De</label>
-            <FormList handleList={props.handleList} />
+            <FormList id='From' handleList={props.handleList} />
           </div>
           <Chart />
           <div className='section__form__coin__box'>
             <label className='section__form__coin__label'>A</label>
-            <FormList handleList={props.handleList} />
+            <FormList id='To' handleList={props.handleList} />
           </div>
         </div>
       </form>

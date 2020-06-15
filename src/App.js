@@ -9,16 +9,13 @@ function App() {
   // let [search, setSearch] = useState({});
   // setSearch({ pair: 'BTC-LTC', amount: 1 })
   let search = { pair: 'BTC-LTC', amount: 1 };
-  console.log('Search at APP', search);
 
   const getDataFromApi = async () => {
-    console.log('Search at API', search);
     const response = await fetch('http://compare.monedero.com/api/getPrice?pair=' + search.pair + '&amount=' + search.amount);
     const data = await response.json();
     return data;
   };
   useEffect(() => {
-    console.log('Search at API', search);
     getDataFromApi().then((data) => {
       console.log('Data', data);
       setCalculation(data);
@@ -37,12 +34,32 @@ function App() {
       ev.currentTarget.classList.add('closed');
     }
   }
+  let fromCurrency = '';
+  let toCurrency = '';
 
+  const getSearch = () => {
+    console.log(fromCurrency, toCurrency);
+    if (fromCurrency !== '' && toCurrency !== '') {
+      let pair = fromCurrency + '-' + toCurrency;
+      console.log(pair);
+    }
+  };
   function handleList(ev) {
-    console.log(ev.currentTarget.id);
+    let currencyType = ev.currentTarget.id;
+    let currencyList = ev.currentTarget.parentNode.id;
+    if (currencyList === 'From') {
+      console.log(currencyList);
+      fromCurrency = currencyType;
+      return fromCurrency, getSearch();
+    } else if (currencyList === 'To') {
+      console.log(currencyList);
+      toCurrency = currencyType;
+      return toCurrency, getSearch();
+    }
   }
+
   const handleQuantity = (ev) => {
-    console.log('Quantity', ev.currentTarget.value);
+    search.amount = ev.currentTarget.value;
   };
   const handleCalculate = (ev) => {
     console.log('Calculate');

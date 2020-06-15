@@ -10,7 +10,7 @@ import Bcash from '../images/bch.svg';
 
 function FormList(props) {
   return (
-    <ul className='section__form__list'>
+    <ul className='section__form__list' id={props.id}>
       <FormListItem src={Bitcoins} name='Bitcoins' handleList={props.handleList} />
       <FormListItem src={Tether} name='Tether' handleList={props.handleList} />
       <FormListItem src={Ethereum} name='Ethereum' handleList={props.handleList} />
