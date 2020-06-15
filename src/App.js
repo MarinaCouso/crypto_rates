@@ -16,10 +16,13 @@ function App() {
       ev.currentTarget.classList.add('closed');
     }
   }
+  function handleList(ev) {
+    console.log(ev.currentTarget);
+  }
   return (
     <>
       <Header handleMenu={handleMenu} />
-      <Form />
+      <Form handleList={handleList} />
       <Footer />
     </>
   );

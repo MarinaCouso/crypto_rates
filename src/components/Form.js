@@ -1,7 +1,8 @@
 import React from 'react';
 import FormList from './FormList';
 
-function Form() {
+function Form(props) {
+  console.log('Form', props);
   return (
     <section>
       <form className='section__form'>
@@ -12,11 +13,11 @@ function Form() {
         <div className='section__form__coin'>
           <div className='section__form__coin__box'>
             <label className='section__form__coin__label'>De</label>
-            <FormList />
+            <FormList handleList={props.handleList} />
           </div>
           <div className='section__form__coin__box'>
             <label className='section__form__coin__label'>A</label>
-            <FormList />
+            <FormList handleList={props.handleList} />
           </div>
         </div>
       </form>

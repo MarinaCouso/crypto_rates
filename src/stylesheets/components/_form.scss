@@ -1,9 +1,9 @@
 .section__form {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  // height: 100vh;
   @media all and (min-width: 768px) {
-    height: 30vh;
+    // height: 30vh;
     padding: 7rem 0rem 23rem 0rem;
   }
   &__quantity {
