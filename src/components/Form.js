@@ -1,5 +1,6 @@
 import React from 'react';
 import FormList from './FormList';
+import Chart from './Chart';
 
 function Form(props) {
   console.log('Form', props);
@@ -15,6 +16,7 @@ function Form(props) {
             <label className='section__form__coin__label'>De</label>
             <FormList handleList={props.handleList} />
           </div>
+          <Chart />
           <div className='section__form__coin__box'>
             <label className='section__form__coin__label'>A</label>
             <FormList handleList={props.handleList} />
