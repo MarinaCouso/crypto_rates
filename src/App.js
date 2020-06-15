@@ -2,9 +2,29 @@ import React from 'react';
 import Header from './components/Header';
 import Form from './components/Form';
 import Footer from './components/Footer';
-import { useEffect } from 'react';
-import getDataFromApi from './service/Api';
+import { useState, useEffect } from 'react';
+// import getDataFromApi from './service/Api';
 function App() {
+  let [calculation, setCalculation] = useState([]);
+  // let [search, setSearch] = useState({});
+  // setSearch({ pair: 'BTC-LTC', amount: 1 })
+  let search = { pair: 'BTC-LTC', amount: 1 };
+  console.log('Search at APP', search);
+
+  const getDataFromApi = async () => {
+    console.log('Search at API', search);
+    const response = await fetch('http://compare.monedero.com/api/getPrice?pair=' + search.pair + '&amount=' + search.amount);
+    const data = await response.json();
+    return data;
+  };
+  useEffect(() => {
+    console.log('Search at API', search);
+    getDataFromApi().then((data) => {
+      console.log('Data', data);
+      setCalculation(data);
+    });
+  }, []);
+
   function handleMenu(ev) {
     const deployMenu = document.querySelector('.js-menu');
     if (ev.currentTarget.classList.contains('closed')) {
@@ -17,11 +37,7 @@ function App() {
       ev.currentTarget.classList.add('closed');
     }
   }
-  useEffect(() => {
-    getDataFromApi().then((data) => {
-      console.log(data);
-    });
-  }, []);
+
   function handleList(ev) {
     console.log(ev.currentTarget.id);
   }
@@ -30,6 +46,10 @@ function App() {
   };
   const handleCalculate = (ev) => {
     console.log('Calculate');
+    // getDataFromApi(search).then((data) => {
+    //   setCalculation(data);
+    // });
+    // return calculation;
   };
   return (
     <>
