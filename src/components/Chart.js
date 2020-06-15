@@ -1,37 +1,38 @@
 import React, { PureComponent } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts';
-
-const data = [
-  {
-    name: 'Monedero',
-    quantity: 4000,
-  },
-  {
-    name: 'Zel',
-    quantity: 3000,
-  },
-  {
-    name: 'Edge',
-    quantity: 2000,
-  },
-  {
-    name: 'Atomic',
-    quantity: 2780,
-  },
-  {
-    name: 'Guarda',
-    quantity: 1890,
-  },
-  {
-    name: 'Exodus',
-    quantity: 2390,
-  },
-];
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 export default class Chart extends PureComponent {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/30763kr7/';
 
-  render() {
+  render(props) {
+    console.log(this.props.calculation);
+    const data = [
+      {
+        name: 'Monedero',
+        quantity: this.props.calculation.MONEDERO,
+      },
+      {
+        name: 'Zel',
+        quantity: this.props.calculation.ZEL,
+      },
+      {
+        name: 'Edge',
+        quantity: this.props.calculation.EDGE,
+      },
+      {
+        name: 'Atomic',
+        quantity: this.props.calculation.ATOMIC,
+      },
+      {
+        name: 'Guarda',
+        quantity: this.props.calculation.GUARDA,
+      },
+      {
+        name: 'Exodus',
+        quantity: this.props.calculation.EXODUS,
+      },
+    ];
+
     return (
       <div className='chart'>
         <BarChart
@@ -49,9 +50,8 @@ export default class Chart extends PureComponent {
           <CartesianGrid strokeDasharray='3' />
           <XAxis dataKey='name' />
           <YAxis />
-          {/* <Tooltip /> */}
-          {/* <Legend /> */}
-          <Bar dataKey='quantity' fill='#82ca9d' />
+          <Tooltip />
+          <Bar dataKey='quantity' fill='#335eea' />
         </BarChart>
       </div>
     );

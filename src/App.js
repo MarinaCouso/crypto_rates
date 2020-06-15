@@ -70,7 +70,7 @@ function App() {
   return (
     <>
       <Header handleMenu={handleMenu} />
-      <Form handleList={handleList} handleQuantity={handleQuantity} handleCalculate={handleCalculate} />
+      <Form calculation={calculation} handleList={handleList} handleQuantity={handleQuantity} handleCalculate={handleCalculate} />
       <Footer />
     </>
   );

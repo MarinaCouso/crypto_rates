@@ -27,7 +27,7 @@ function Form(props) {
             <label className='section__form__coin__label'>De</label>
             <FormList id='From' handleList={props.handleList} />
           </div>
-          <Chart />
+          <Chart calculation={props.calculation} />
           <div className='section__form__coin__box'>
             <label className='section__form__coin__label'>A</label>
             <FormList id='To' handleList={props.handleList} />
