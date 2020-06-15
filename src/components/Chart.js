@@ -35,8 +35,8 @@ export default class Chart extends PureComponent {
     return (
       <div className='chart'>
         <BarChart
-          width={800}
-          height={500}
+          width={700}
+          height={400}
           data={data}
           margin={{
             top: 5,
