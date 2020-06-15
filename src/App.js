@@ -13,11 +13,12 @@ function App() {
   const getDataFromApi = async () => {
     const response = await fetch('http://compare.monedero.com/api/getPrice?pair=' + search.pair + '&amount=' + search.amount);
     const data = await response.json();
+    console.log('***Data after change search', data);
+    setCalculation(data);
     return data;
   };
   useEffect(() => {
     getDataFromApi().then((data) => {
-      console.log('Data', data);
       setCalculation(data);
     });
   }, []);
@@ -38,21 +39,19 @@ function App() {
   let toCurrency = '';
 
   const getSearch = () => {
-    console.log(fromCurrency, toCurrency);
     if (fromCurrency !== '' && toCurrency !== '') {
       let pair = fromCurrency + '-' + toCurrency;
-      console.log(pair);
+      search.pair = pair;
+      return search, getDataFromApi();
     }
   };
   function handleList(ev) {
     let currencyType = ev.currentTarget.id;
     let currencyList = ev.currentTarget.parentNode.id;
     if (currencyList === 'From') {
-      console.log(currencyList);
       fromCurrency = currencyType;
       return fromCurrency, getSearch();
     } else if (currencyList === 'To') {
-      console.log(currencyList);
       toCurrency = currencyType;
       return toCurrency, getSearch();
     }
