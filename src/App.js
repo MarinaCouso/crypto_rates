@@ -22,10 +22,19 @@ function App() {
       console.log(data);
     });
   }, []);
+  function handleList(ev) {
+    console.log(ev.currentTarget.id);
+  }
+  const handleQuantity = (ev) => {
+    console.log('Quantity', ev.currentTarget.value);
+  };
+  const handleCalculate = (ev) => {
+    console.log('Calculate');
+  };
   return (
     <>
       <Header handleMenu={handleMenu} />
-      <Form />
+      <Form handleList={handleList} handleQuantity={handleQuantity} handleCalculate={handleCalculate} />
       <Footer />
     </>
   );

@@ -2,7 +2,6 @@ import React from 'react';
 import Logo from '../images/logo.svg';
 import MenuClosed from '../images/menu-icon.png';
 import HeaderMenu from './HeaderMenu';
-import HeroImage from '../images/wallet-resized.jpg';
 
 function Header(props) {
   function handleClick(ev) {
@@ -22,10 +21,9 @@ function Header(props) {
       <div className='header__hero'>
         <div className='header__hero__text'>
           <h1 className='header__hero__text__title'>Compara precios rápido y fácil</h1>
-          <p className='header__hero__text__p'>Elige las monedas que quieres comparar y la cantidad que quieres calcular.</p>
-          <p className='header__hero__text__p'>Así de sencillo.</p>
+          <p className='header__hero__text__p'>Elige las monedas que quieres comparar y la cantidad que quieres calcular. Así de sencillo.</p>
+          <p className='header__hero__text__p'></p>
         </div>
-        <img className='header__hero__image' src={HeroImage} alt='Data graphic' title='Data graphic' />
       </div>
     </header>
   );
