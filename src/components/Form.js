@@ -9,7 +9,10 @@ function Form(props) {
       <form className='section__form'>
         <div className='section__form__quantity'>
           <label className='section__form__quantity__label'>¿Qué cantidad quieres calcular?</label>
-          <input className='section__form__quantity__input' type='number' value={1}></input>
+          <div className='section__form__quantity__calculate'>
+            <input className='section__form__quantity__input' type='number' value={1}></input>
+            <button className='section__form__quantity__button'>Calcula</button>
+          </div>
         </div>
         <div className='section__form__coin'>
           <div className='section__form__coin__box'>
