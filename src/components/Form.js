@@ -8,6 +8,7 @@ function Form(props) {
   };
   const handleSubmit = (ev) => {
     ev.preventDefault();
+
     props.handleCalculate(ev);
   };
   return (
@@ -16,7 +17,7 @@ function Form(props) {
         <div className='section__form__quantity'>
           <label className='section__form__quantity__label'>¿Qué cantidad quieres calcular?</label>
           <div className='section__form__quantity__calculate'>
-            <input className='section__form__quantity__input' type='number' onChange={handleChange} placeholder='Indicate amount' value={props.userSearch.amount}></input>
+            <input className='section__form__quantity__input' type='number' onChange={handleChange} placeholder='Indicate amount' defaultValue={props.search.amount}></input>
             <button className='section__form__quantity__button' onClick={handleSubmit}>
               Calcula
             </button>

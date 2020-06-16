@@ -5,9 +5,10 @@ import Footer from './components/Footer';
 import { useState, useEffect } from 'react';
 // import getDataFromApi from './service/Api';
 function App() {
-  let [calculation, setCalculation] = useState([]);
-  let [initialSearch, setInitialSearch] = useState({ pair: 'BTC-LTC', amount: 1 });
-  let [userSearch, setUserSearch] = useState({ pair: 'BTC-LTC', amount: 1 });
+  const [calculation, setCalculation] = useState([]);
+  const [search, setSearch] = useState({ pair: 'BTC-LTC', amount: 1 });
+  // const [initialSearch, setInitialSearch] = useState({ pair: 'BTC-LTC', amount: 1 });
+  // const [userSearch, setUserSearch] = useState({ pair: 'BTC-LTC', amount: 1 });
 
   // setSearch({ pair: 'BTC-LTC', amount: 1 })
   // let search = { pair: 'BTC-LTC', amount: 1 };
@@ -20,7 +21,7 @@ function App() {
     return data;
   };
   useEffect(() => {
-    getDataFromApi(initialSearch).then((data) => {
+    getDataFromApi(search).then((data) => {
       setCalculation(data);
     });
   }, []);
@@ -42,9 +43,14 @@ function App() {
 
   const getSearch = () => {
     if (fromCurrency !== '' && toCurrency !== '') {
-      let pair = fromCurrency + '-' + toCurrency;
-      setUserSearch((userSearch.pair = pair));
-      return getDataFromApi();
+      let pair2 = fromCurrency + '-' + toCurrency;
+      setSearch((prevState) => {
+        ({ pair: pair2, amount: prevState.amount });
+      });
+
+      // setSearch({ pair: pair2, amount: prevState.amount });
+      console.log('***Setsearch', search);
+      return getDataFromApi(search);
     }
   };
   function handleList(ev) {
@@ -60,12 +66,12 @@ function App() {
   }
 
   const handleQuantity = (ev) => {
-    setUserSearch((userSearch.amount = parseInt(ev.currentTarget.value)));
-    console.log(userSearch);
+    setSearch((search.amount = parseInt(ev.currentTarget.value)));
+    console.log(search);
   };
   const handleCalculate = (ev) => {
     console.log('Calculate');
-    getDataFromApi(userSearch).then((data) => {
+    getDataFromApi(search).then((data) => {
       setCalculation(data);
     });
     return calculation;
@@ -73,7 +79,7 @@ function App() {
   return (
     <>
       <Header handleMenu={handleMenu} />
-      <Form userSearch={userSearch} calculation={calculation} handleList={handleList} handleQuantity={handleQuantity} handleCalculate={handleCalculate} />
+      <Form search={search} calculation={calculation} handleList={handleList} handleQuantity={handleQuantity} handleCalculate={handleCalculate} />
       <Footer />
     </>
   );
