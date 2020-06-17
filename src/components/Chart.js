@@ -5,7 +5,6 @@ export default class Chart extends PureComponent {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/30763kr7/';
 
   render(props) {
-    console.log(this.props.calculation);
     const data = [
       {
         name: 'Monedero',
