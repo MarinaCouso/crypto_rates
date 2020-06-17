@@ -120,6 +120,7 @@
 .closed-list {
   display: none;
 }
-.borderBlue {
-  border: 2rem solid #335eea;
+.selected {
+  background-color: #335eea;
+  color: white;
 }

@@ -36,8 +36,8 @@ function App() {
 
   const getSearch = () => {
     if (fromCurrency !== '' && toCurrency !== '') {
-      let pair = fromCurrency + '-' + toCurrency;
-      setSearch((search.pair = pair));
+      let newPair = fromCurrency + '-' + toCurrency;
+      setSearch((prevState) => ({ ...prevState, pair: newPair }));
     }
     return getDataFromApi(search);
   };
@@ -54,19 +54,22 @@ function App() {
   }
 
   const handleQuantity = (ev) => {
-    setSearch((search.amount = parseInt(ev.currentTarget.value)));
-    getSearch();
-  };
-  const handleCalculate = (ev) => {
+    setSearch((prevState) => ({ ...prevState, amount: parseInt(ev.currentTarget.value) }));
+    console.log(search);
     getDataFromApi(search).then((data) => {
       setCalculation(data);
     });
-    return calculation;
   };
+  // const handleCalculate = (ev) => {
+  //   getDataFromApi(search).then((data) => {
+  //     setCalculation(data);
+  //   });
+  //   return calculation;
+  // };
   return (
     <>
       <Header handleMenu={handleMenu} />
-      <Form search={search} calculation={calculation} handleList={handleList} handleQuantity={handleQuantity} handleCalculate={handleCalculate} />
+      <Form search={search} calculation={calculation} handleList={handleList} handleQuantity={handleQuantity} />
       <Footer />
     </>
   );
