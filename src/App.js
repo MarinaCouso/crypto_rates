@@ -55,6 +55,7 @@ function App() {
 
   const handleQuantity = (ev) => {
     setSearch((search.amount = parseInt(ev.currentTarget.value)));
+    getSearch();
   };
   const handleCalculate = (ev) => {
     getDataFromApi(search).then((data) => {
