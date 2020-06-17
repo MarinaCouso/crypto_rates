@@ -4,22 +4,24 @@ import Chart from './Chart';
 
 function Form(props) {
   const handleChange = (ev) => {
+    console.log(ev.currentTarget.value);
     props.handleQuantity(ev);
   };
-  const handleSubmit = (ev) => {
-    ev.preventDefault();
-    props.handleCalculate(ev);
-  };
+  // const handleSubmit = (ev) => {
+  //   ev.preventDefault();
+
+  //   props.handleCalculate(ev);
+  // };
   return (
     <section>
       <form className='section__form'>
         <div className='section__form__quantity'>
           <label className='section__form__quantity__label'>¿Qué cantidad quieres calcular?</label>
           <div className='section__form__quantity__calculate'>
-            <input className='section__form__quantity__input' type='number' onChange={handleChange} placeholder='Indicate amount'></input>
-            <button className='section__form__quantity__button' onClick={handleSubmit}>
+            <input className='section__form__quantity__input' type='number' onChange={handleChange} placeholder='Indicate amount' defaultValue={props.search.amount}></input>
+            {/* <button className='section__form__quantity__button' onClick={handleSubmit}>
               Calcula
-            </button>
+            </button> */}
           </div>
         </div>
         <div className='section__form__coin'>
