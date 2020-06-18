@@ -3,21 +3,16 @@ import Header from './components/Header';
 import Form from './components/Form';
 import Footer from './components/Footer';
 import { useState, useEffect } from 'react';
+import getDataFromApi from './service/Api';
 function App() {
   const [calculation, setCalculation] = useState([]);
   const [search, setSearch] = useState({ pair: 'BTC-LTC', amount: 1 });
 
-  const getDataFromApi = async (search) => {
-    const response = await fetch('http://compare.monedero.com/api/getPrice?pair=' + search.pair + '&amount=' + search.amount);
-    const data = await response.json();
-    setCalculation(data);
-    return data;
-  };
   useEffect(() => {
     getDataFromApi(search).then((data) => {
       setCalculation(data);
     });
-  }, []);
+  }, [search]);
 
   function handleMenu(ev) {
     const deployMenu = document.querySelector('.js-menu');
