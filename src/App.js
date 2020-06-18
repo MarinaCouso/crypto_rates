@@ -8,7 +8,7 @@ function App() {
   const [search, setSearch] = useState({ pair: 'BTC-LTC', amount: 1 });
 
   const getDataFromApi = async (search) => {
-    const response = await fetch('http://compare.monedero.com/api/getPrice?pair=' + search.pair + '&amount=' + search.amount);
+    const response = await fetch('//compare.monedero.com/api/getPrice?pair=' + search.pair + '&amount=' + search.amount);
     const data = await response.json();
     setCalculation(data);
     return data;
