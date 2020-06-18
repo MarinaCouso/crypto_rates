@@ -5,4 +5,3 @@ const getDataFromApi = async (search) => {
 };
 
 export default getDataFromApi;
-ce;

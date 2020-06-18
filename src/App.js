@@ -26,41 +26,23 @@ function App() {
       ev.currentTarget.classList.add('closed');
     }
   }
-  let fromCurrency = '';
-  let toCurrency = '';
 
-  const getSearch = () => {
-    if (fromCurrency !== '' && toCurrency !== '') {
-      let newPair = fromCurrency + '-' + toCurrency;
-      setSearch((prevState) => ({ ...prevState, pair: newPair }));
-    }
-    return getDataFromApi(search);
-  };
   function handleList(ev) {
+    let newPair = search.pair.split('-');
     let currencyType = ev.currentTarget.id;
     let currencyList = ev.currentTarget.parentNode.id;
     if (currencyList === 'From') {
-      fromCurrency = currencyType;
-      return getSearch();
+      newPair[0] = currencyType;
     } else if (currencyList === 'To') {
-      toCurrency = currencyType;
-      return getSearch();
+      newPair[1] = currencyType;
     }
+    setSearch((prevState) => ({ ...prevState, pair: newPair.join('-') }));
   }
 
   const handleQuantity = (ev) => {
     setSearch((prevState) => ({ ...prevState, amount: parseInt(ev.currentTarget.value) }));
-    console.log(search);
-    getDataFromApi(search).then((data) => {
-      setCalculation(data);
-    });
   };
-  // const handleCalculate = (ev) => {
-  //   getDataFromApi(search).then((data) => {
-  //     setCalculation(data);
-  //   });
-  //   return calculation;
-  // };
+
   return (
     <>
       <Header handleMenu={handleMenu} />
