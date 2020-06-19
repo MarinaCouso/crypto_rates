@@ -3,21 +3,16 @@ import Header from './components/Header';
 import Form from './components/Form';
 import Footer from './components/Footer';
 import { useState, useEffect } from 'react';
+import getDataFromApi from './service/Api';
 function App() {
   const [calculation, setCalculation] = useState([]);
   const [search, setSearch] = useState({ pair: 'BTC-LTC', amount: 1 });
 
-  const getDataFromApi = async (search) => {
-    const response = await fetch('//compare.monedero.com/api/getPrice?pair=' + search.pair + '&amount=' + search.amount);
-    const data = await response.json();
-    setCalculation(data);
-    return data;
-  };
   useEffect(() => {
     getDataFromApi(search).then((data) => {
       setCalculation(data);
     });
-  }, []);
+  }, [search]);
 
   function handleMenu(ev) {
     const deployMenu = document.querySelector('.js-menu');
@@ -31,41 +26,23 @@ function App() {
       ev.currentTarget.classList.add('closed');
     }
   }
-  let fromCurrency = '';
-  let toCurrency = '';
 
-  const getSearch = () => {
-    if (fromCurrency !== '' && toCurrency !== '') {
-      let newPair = fromCurrency + '-' + toCurrency;
-      setSearch((prevState) => ({ ...prevState, pair: newPair }));
-    }
-    return getDataFromApi(search);
-  };
   function handleList(ev) {
+    let newPair = search.pair.split('-');
     let currencyType = ev.currentTarget.id;
     let currencyList = ev.currentTarget.parentNode.id;
     if (currencyList === 'From') {
-      fromCurrency = currencyType;
-      return getSearch();
+      newPair[0] = currencyType;
     } else if (currencyList === 'To') {
-      toCurrency = currencyType;
-      return getSearch();
+      newPair[1] = currencyType;
     }
+    setSearch((prevState) => ({ ...prevState, pair: newPair.join('-') }));
   }
 
   const handleQuantity = (ev) => {
     setSearch((prevState) => ({ ...prevState, amount: parseInt(ev.currentTarget.value) }));
-    console.log(search);
-    getDataFromApi(search).then((data) => {
-      setCalculation(data);
-    });
   };
-  // const handleCalculate = (ev) => {
-  //   getDataFromApi(search).then((data) => {
-  //     setCalculation(data);
-  //   });
-  //   return calculation;
-  // };
+
   return (
     <>
       <Header handleMenu={handleMenu} />
