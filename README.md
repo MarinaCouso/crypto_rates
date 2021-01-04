@@ -11,21 +11,7 @@ This project has been created with [React.js](https://es.reactjs.org/), so:
 1. Download or clone the repo
 2. Install the dependencies with `npm install`
 
-Styles are developed with Sass, so you will need to install [Node-sass]:
-
-```
-
-npm install node-sass
-
-```
-
-Finally, for the chart component you would need to install [Recharts](https://recharts.org/en-US/):
-
-```
-
-npm install recharts
-
-```
+Note that styles are developed with [Node-sass] and the chart component with [Recharts](https://recharts.org/en-US/):
 
 ### To run it
 
